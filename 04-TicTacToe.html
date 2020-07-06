@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic-Tac-Toe</title>
+    </head>
+    <body>
+        <h1>Tic-Tac-Toe</h1>
+        <canvas id="scene" width="300" height="300" style="border: 1px dotted black"></canvas>
+        <script>
+/** @type {CanvasRenderingContext2D} */
+let ctx = scene.getContext("2d")
+
+// Diese zwei Variablen steuern das gesamte Programm, d.h. mit diesen beiden Variablen
+// kann man ein Spielfeld mit beliebiger Zellenanzahl und Größe zeichnen und am Rest des Programms
+// muss nichts geändert werden.
+let numberOfCells = 7 // Versuche den Wert zu ändern und schau was passiert
+let cellSize = 30 // Versuche den Wert zu ändern und schau was passiert
+
+// `drawLine` zeichnet eine Linie von Punkt A (xFrom, yFrom) zu Punkt B (xTo, yTo)
+let drawLine = (xFrom, yFrom, xTo, yTo) =>
+{
+    ctx.beginPath()
+    ctx.moveTo(xFrom, yFrom)
+    ctx.lineTo(xTo, yTo)
+    ctx.stroke()
+}
+
+// Vertikale Striche zeichnen
+// Wenn wir 7 Zellen zeichnen wollen, benötigen wir 6 Striche.
+// Wir könnten zwar wie üblich von 0 bis 5 zählen, die Berechnung
+// in der Schleife wird jedoch einfacher, wenn wir von 1 bis 6 zählen.
+for (let cell = 1; cell < numberOfCells; cell++)
+{
+    let x = cell * cellSize // X-Koordinate ausrechnen
+    drawLine(x, 0, x, numberOfCells * cellSize) // Linie von oben (x, 0) nach unten (x, numberOfCells * cellSize) zeichnen
+}
+// Horizontale Striche zeichnen
+for (let cell = 1; cell < numberOfCells; cell++)
+{
+    let y = cell * cellSize // Y-Koordinate ausrechnen
+    drawLine(0, y, numberOfCells * cellSize, y) // Linie von links (0, y) nach rechts (numberOfCells * cellSize, y) zeichnen
+}
+        </script>
+    </body>
+</html>

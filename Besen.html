@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Besen</title>
+    </head>
+    <body>
+        <h1>Besen</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dotted black"></canvas>
+        <script>
+/** @type {CanvasRenderingContext2D} */
+let ctx = scene.getContext("2d")
+
+let drawBroom = (x, y) =>
+{
+    ctx.beginPath()
+    ctx.moveTo(x, y)
+    ctx.lineTo(x, y + 70)
+    ctx.lineTo(x - 30, y + 100)
+    ctx.moveTo(x, y + 70)
+    ctx.lineTo(x - 15, y + 100)
+    ctx.moveTo(x, y + 70)
+    ctx.lineTo(x, y + 100)
+    ctx.moveTo(x, y + 70)
+    ctx.lineTo(x + 15, y + 100)
+    ctx.moveTo(x, y + 70)
+    ctx.lineTo(x + 30, y + 100)
+    ctx.stroke()
+}
+drawBroom (50, 20)
+drawBroom (70, 100)
+drawBroom (90, 50)
+        </script>
+    </body>
+</html>

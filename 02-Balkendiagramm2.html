@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Balkendiagramm 2</title>
+    </head>
+    <body>
+        <h1>Balkendiagramm 2</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dotted black"></canvas>
+        <script>
+/** @type {CanvasRenderingContext2D} */
+let ctx = scene.getContext("2d")
+
+let offsetX = 10 // Abstand der linken Kante des Balkens vom Rand
+let height = 100 // Höhe des Balkens
+for (let i = 0; i < 10; i++) // obere 10 Balken zeichnen
+{
+    ctx.strokeRect(offsetX, 10, 20, height)
+    height -= 10
+    offsetX += 25
+}
+offsetX = 10 // Abstand zurücksetzen
+height = 20 // Höhe zurücksetzen
+for (let i = 0; i < 10; i++) // untere 10 Balken zeichnen
+{
+    ctx.strokeRect(offsetX, 140 - height, 20, height)
+    height += 10
+    offsetX += 25
+}
+        </script>
+    </body>
+</html>

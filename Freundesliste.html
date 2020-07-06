@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Meine Freunde</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <h1>Meine Freunde</h1>
+    <!-- form-Element grupiert mehrere Eingabefelder zu einem Gesamtformular-->
+    <table>
+        <!-- Tabellenkopf für Überschriften -->
+        <thead>
+            <!-- table row beschreibt eine Tabellenzeile -->
+            <tr>
+                <!-- tale headings beschreibt eine Überschrifftenzelle -->
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Spitzname</th>
+                <th>Geschlecht</th>
+                <th>Geburtsdatum</th>
+                <th>Hobbies</th>
+                <th>Lieblingsfarbe</th>
+                <th>Lieblingsmusik</th>
+                <th>Wohnort</th>
+                <th>Haustiere</th>
+                <!-- Spitzname, Geburtsdatum, Hobbies, Lieblingsmusik, Wohnort, Haustiere-->
+            </tr>
+        </thead>
+        <!-- Tabellendaten -->
+        <tbody>
+            <tr>
+                <td>Anna-Lena</td>
+                <td>Zopf</td>
+                <td>Anna</td>
+                <td>Weiblich</td>
+                <td>26. Mai 2005</td>
+                <td>Boxen</td>
+                <td>Lila</td>
+                <td>Hardstyle</td>
+                <td>Frankenmarkt</td>
+                <td>1 Hund, 3 Katzen, 1 Hase</td>
+            </tr>
+
+            <tr>
+                <td>Elma</td>
+                <td>Ajvazi</td>
+                <td>Elmitschko</td>
+                <td>Weiblich</td>
+                <td>24. Februar 2004</td>
+                <td>Boxen</td>
+                <td>Blau</td>
+                <td>Pop</td>
+                <td>Frankenmarkt</td>
+                <td>1 Katze</td>
+            </tr>
+            <tr>
+                <td>Jasmin</td>
+                <td>Lösch</td>
+                <td>Jasi</td>
+                <td>Weiblich</td>
+                <td>12. Mai 2004</td>
+                <td>Spazieren</td>
+                <td>Rot</td>
+                <td>Pop</td>
+                <td>Frankenmarkt</td>
+                <td>2 Hunde</td>
+            </tr>
+            <tr>
+                <td>Fabian</td>
+                <td>Gehnböck</td>
+                <td>Fabi</td>
+                <td>Männlich</td>
+                <td>19. Oktober 2004</td>
+                <td>Moped fahren</td>
+                <td>Grün</td>
+                <td>English Rap</td>
+                <td>Lenzing</td>
+                <td>1 Hund</td>
+            </tr>
+
+        </tbody>
+        <!-- Tabellenfuß (z.B. für Zusammenfassung von Daten, Summen) -->
+        <tfoot></tfoot>
+    </table>
+    <form>
+        <label>Vorname:<br>
+            <input type="text" name="Vorname"></label>
+        <br>
+        <label>Nachname:<br>
+            <input type="text" name="Nachname"></label>
+        <br>
+        <label>Spitzname:<br>
+            <input type="text" name="Spitzname"></label>
+        <br><br>
+        Geschlecht:<br>
+        <!--Radio-Buttons: Damit genau einer ausgewählte werden kann, müssen alle den geichen Namen besitzen-->
+        <label><input type="radio" name="Geschlecht" value="Männlich" checked> Männlich<br></label>
+        <label><input type="radio" name="Geschlecht" value="Weiblich"> Weiblich<br></label>
+        <label><input type="radio" name="Geschlecht" value="Sonsige"> Sonstige<br></label><br>
+        <br>
+        <input type="date"><br><br>
+        <label>Hobbies:<br>
+            <textarea name="Hobbies">
+        </textarea></label><br><br>
+        <label>Lieblingsfarbe:<br>
+            <input type="color"></label><br><br>
+        <label>Lieblingsmusik:<br>
+            <textarea name="Lieblingsmusik">
+        </textarea></label><br><br>
+        <label>Wohnort:<br>
+            <textarea name="Wohnort">
+        </textarea></label><br><br>
+        <label><br>
+            <select name="Haustiere" multiple>
+                <option value="Keine">Keine</option>
+                <option value="Hund(e)">Hund(e)</option>
+                <option value="Katze(n)">Katze(n)</option>
+                <option value="Hase(n)">Hase(n)</option>
+                <option value="Fisch(e)">Fisch(e)</option>
+                <option value="Sonsige">Sonstige</option>
+            </select></label><br><br>
+        <input type="submit" value="Freund Hinzufügen"><br>
+    </form>
+    <script>
+        document.querySelector("form").onsubmit = evt => {
+            // Standardverhalten beim Absenden von Formularen (= neuladen der Seite)
+            // unterdrücken
+            evt.preventDefault();
+
+            // Werte aus Formular lesen
+            let Vorname = document.querySelector("[name=Vorname]")
+            alert(firstName.value)
+
+            let tableBode = document.querySelector("tabel tbody")
+            let row = document.createElement("tr")
+            let firstNameCell = document.createElement("td")
+            firstNameCell.innerText = firstName.value
+            tableBody.appendChild(row)
+            row.appendChild(firstNameCell)
+        }; 
+    </script>
+</body>
+<!--caniuse.com-->
+<!--W3C-->
+
+</html>

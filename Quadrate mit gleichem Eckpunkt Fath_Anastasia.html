@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+    <html lang="de-AT">
+    
+    <head>
+    <title>Quadrate mit gleichem Eckpunkt</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        <h1>Quadrate mit gleichem Eckpunkt</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+        <script>
+             let ctx = scene.getContext("2d")
+
+
+            let offset = 10
+            let size = 2
+            while(size < 130){
+
+            ctx.strokeRect(offset, offset, size, size)
+
+            size = size * 2
+            }
+        </script>
+    </body>
+    
+    </html>

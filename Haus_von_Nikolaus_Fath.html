@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+    <head>  <title>Haus von Nikolaus</title>
+        <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <h1>Haus von Nikolaus</h1>
+    <canvas id="scene" width="300" height="300" style="border: 1px dashed black"></canvas>
+    <script>     
+    let ctx = scene.getContext("2d")
+ 
+    ctx.lineWidth = "2"
+        ctx.beginPath()
+        ctx.moveTo(100, 200)
+        ctx.lineTo(100, 100)
+
+        ctx.moveTo(100, 200)
+        ctx.lineTo(200, 200)
+
+        ctx.moveTo(200, 200)
+        ctx.lineTo(200, 100)
+
+        ctx.moveTo(200, 100)
+        ctx.lineTo(100, 100)
+
+        ctx.moveTo(100, 100)
+        ctx.lineTo(200, 200)
+
+        ctx.moveTo(100, 200)
+        ctx.lineTo(200, 100)
+        ctx.stroke()
+
+        ctx.beginPath()
+        ctx.arc(150, 100, 50,0, 97.4, Math.PI/2)
+        ctx.lineTo(150, 150)
+        ctx.stroke()
+
+        </script>
+        <body>
+</html>

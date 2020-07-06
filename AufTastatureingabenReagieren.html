@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Auf Tastatureingaben reagieren</title>
+    </head>
+    <body>
+        <h1>Auf Tastatureingaben reagieren</h1>
+        <canvas id="scene" width="500" height="250" style="border: 1px dotted black"></canvas>
+        <script>
+/** @type {CanvasRenderingContext2D} */
+let ctx = scene.getContext("2d")
+
+let player = new Image()
+player.src = "http://iconoun.com/demo/images/scale_grumpy_cat.png"
+let playerWidth = 900 / 15
+let playerHeight = 704 / 15
+
+let xPos = scene.width / 2 - playerWidth / 2
+let yPos = scene.height / 2 - playerHeight / 2
+let keyUpIsPressed = false
+let keyDownIsPressed = false
+let keyLeftIsPressed = false
+let keyRightIsPressed = false
+
+let draw = () =>
+{
+    ctx.clearRect(0, 0, scene.width, scene.height)
+
+    if (keyUpIsPressed)
+    {
+        yPos -= 5
+    }
+    if (keyDownIsPressed)
+    {
+        yPos += 5
+    }
+    if (keyLeftIsPressed)
+    {
+        xPos -= 5
+    }
+    if (keyRightIsPressed)
+    {
+        xPos += 5
+    }
+
+    ctx.drawImage(player, xPos, yPos, playerWidth, playerHeight)
+}
+setInterval(draw, 40)
+
+let onKeyDown = event =>
+{
+    if (event.key == "ArrowUp")
+    {
+        keyUpIsPressed = true
+    }
+    else if (event.key == "ArrowDown")
+    {
+        keyDownIsPressed = true
+    }
+    else if (event.key == "ArrowLeft")
+    {
+        keyLeftIsPressed = true
+    }
+    else if (event.key == "ArrowRight")
+    {
+        keyRightIsPressed = true
+    }
+}
+window.addEventListener("keydown", onKeyDown)
+
+let onKeyUp = event =>
+{
+    if (event.key == "ArrowUp")
+    {
+        keyUpIsPressed = false
+    }
+    else if (event.key == "ArrowDown")
+    {
+        keyDownIsPressed = false
+    }
+    else if (event.key == "ArrowLeft")
+    {
+        keyLeftIsPressed = false
+    }
+    else if (event.key == "ArrowRight")
+    {
+        keyRightIsPressed = false
+    }
+}
+window.addEventListener("keyup", onKeyUp)
+        </script>
+    </body>
+</html>

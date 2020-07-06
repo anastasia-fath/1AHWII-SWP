@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="de-AT">
+    
+    <head>
+        <title>Objekte bewegen</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        <h1>Objekte bewegen</h1>
+        <canvas id="scene" width="1000" height="1000" style="border: 1px dashed black"></canvas>
+        <script>
+            /** @type {CanvasRenderingContext2D} */
+            let ctx = scene.getContext("2d") 
+
+            let onTick = () =>
+            {
+           console.log(new Date(), "tick")
+            }
+        
+            // Funktion 'onTick' alle 500 Millisekunden aufrufen
+            setInterval(onTick, 500)
+
+            
+            let yPos = 10
+         // Neues, leeres Bild erzeugen
+            
+            let player = new Image()
+         
+            // Bildquelle difinieren
+            player.src = "http://iconoun.com/demo/images/scale_grumpy_cat.png"
+            let playerWidth = 900 / 15
+            let playerHeight = 704 / 15
+
+            let DrawObject = () =>
+        {
+            ctx.clearRect(0, 0, scene.width, scene.height)
+            ctx.strokeRect(230, yPos, 40, 40)
+            yPos = yPos + 0.2
+        }
+        
+        setInterval(DrawObject, 1)
+        ctx.drawImage(player, 130, yPos, playerWidth, playerHeight)
+            
+        </script>
+    </body>
+    
+    </html>

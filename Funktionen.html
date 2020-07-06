@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+
+<head>
+
+    <title>Functions</title>
+
+</head>
+
+<body>
+
+    <h1>Functions</h1>
+    <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        //Rechtecke zeichnen geht mit einer einzigen Anweisung
+        //ctx.fillRect(150, 50, 150, 150)
+
+        //Kreise zeichnen ist komplizierter ...
+        // ctx.beginPath();
+        // ctx.arc(200, 300, 40, 0, Math.PI * 2);
+        // ctx.stroke();
+
+        // ... aber wir können es uns selber leichter machen
+        // indem wir eine Funktion definieren.
+
+
+        // Funktionsdefinition - Funktion bekommt einen Namen durch Zuweisung an eine Variable
+        // Name ist beliebig soll aber sprechend sein
+        // "x", "y" und "radius" sind funktionsparameter und werden bei jedem Funktionsaufruf
+        // vom Aufrufer übergeben (ansonsten würde ja immer der gleiche Kreis gezeichnet werden)
+        // Anweisungen innerhalb "{" und "}" werden bei jedem Funktionsaufruf ausgeführt.
+        let fillCircle = (x, y, Radius, Color) => {
+            ctx.beginPath();
+            ctx.arc(x, y, Radius, 0, 2 * Math.PI);
+            ctx.fillStyle = Color
+            ctx.fill();
+        }
+
+        let strokeCircle = (x, y, Radius, Color, widht) => {
+            ctx.beginPath();
+            ctx.arc(x, y, Radius, 0, 2 * Math.PI);
+            ctx.strokeStyle = Color
+            ctx.lineWidth = widht
+            ctx.stroke();
+        }
+        // Funktionsaufruf - Funktion gehört nicht zum "ctx"-Objekt deshalb wird sie ohne "ctx." aufgerufen.
+        strokeCircle(100, 300, 100, "Green", 50)
+
+        fillCircle(100, 150, 2, "DarkOrange")
+        fillCircle(20,20, 20, "black")
+    </script>
+
+</body>
+
+</html>

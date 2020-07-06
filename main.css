@@ -1,0 +1,27 @@
+body {
+        font-family:'Arial Narrow', Arial, sans-serif;
+} 
+    h1 {
+    font-variant:small-caps;
+    border-bottom: green;
+    color: purple;
+    font-style:italic;
+    background-color: blue
+    }
+
+.date {
+    font-weight: bold; 
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+th {
+    font-variant: small-caps
+}
+th, td {
+    padding: 0 10px 0 20px;
+}

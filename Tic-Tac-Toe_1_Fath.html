@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+    <html lang="de-AT">
+    
+    <head>
+        <title>Tic-Tac-Toe</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        <h1>Tic-Tac-Toe</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+        <script>
+            /** @type {CanvasRenderingContext2D} */
+            let ctx = scene.getContext("2d");
+        let x1_1 = 30
+        let x1_2 = 30
+        let y1_1 = 0
+        let y1_2 = 90
+        let x2_1 = 0
+        let x2_2 = 90
+        let y2_1 = 30
+        let y2_2 = 30
+
+        while(x1_1 <= 60, x1_2 <=60){
+            ctx.beginPath()
+            ctx.moveTo(x1_1, y1_1)
+            ctx.lineTo(x1_2, y1_2)
+            ctx.stroke()
+            x1_1 = x1_1 * 2
+            x1_2 = x1_2 * 2
+        }
+
+        while(y2_1 <= 60, y2_2 <= 60){
+            ctx.beginPath()
+            ctx.moveTo(x2_1, y2_1)
+            ctx.lineTo(x2_2, y2_2)
+            ctx.stroke()
+            y2_1 = y2_1 * 2
+            y2_2 = y2_2 * 2
+        }
+
+        </script>
+
+        <p>Diese Übung wurde GEMEINSAM mit Petku Marius gemacht.</p>
+        <p>Allerdings haben wir keinen Weg gefunden, es wie von Ihnen vorgeschrieben zu Programmieren.</p>
+        <p>Aus diesem Grund haben wir es auf einem möglicherweise komplizierteren jedoch funktionierenden Weg gemacht.</p>
+    </body>
+    
+    </html>

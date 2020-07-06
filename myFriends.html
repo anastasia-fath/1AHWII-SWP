@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <!-- meta charset="utf-8" für ä ü ö-->
+        <meta charset="utf-8"/>
+        <title>Freundesliste 2.0</title>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+    <body>
+        <h1>Meine Freunde</h1>
+        <form>
+            <label>
+                Vorname:
+                    <input type="text" name="fistName" placeholder="Vorname des Freundes"/><br><br>
+            </label>
+
+            <label>
+                    Nachname:
+                        <input type="text" name="lastName" placeholder="Nachname des Freudes"/><br><br>
+                </label>
+
+                <label>
+                    Geburtsdatum:
+                    <input type="date" name="birthday"/>
+                </label><br><br>
+
+                Geschlech:
+                    <label><input type="radio" name="gendre" value="male"/>männlich</label>
+                    <label><input type="radio" name="gendre" value="female"/>weiblich</label>
+                    <label><input type="radio" name="gendre" value="other"/>divers</label>
+                    <input type="radio" checked/><br><br>
+                
+                Hobbies:
+                <label><input type="checkbox" name="hobbies" value="sport"/>Sport</label>
+                <label><input type="checkbox" name="hobbies" value="musik hören"/>Musik hören</label>
+                <label><input type="checkbox" name="hobbies" value="mit Freunde treffen"/>mit Freunde treffen</label>
+                <label><input type="checkbox" name="hobbies" value="Sonstige"/>Sonstige</label><br><br>
+
+                Lieblingsfach:
+                <select name="favoriteSchoolSubjekt">
+                    <option value="-bitte Auswählen-">- Bitte Auswählen -</option>
+                    <option value="MT">Mechanische Technolgie</option>
+                    <option value="AM">Angewandte Mathematik</option>
+                    <option value="BET">Betriebstechnik</option>
+                    <option value="BESP">Bewegung und Sport</option>
+                    <option value="SWP">Programieren</option>
+                    <option value="other">Sonstige</option>
+                </select><br><br>
+
+                Bemerkungstext:
+                <textarea name="info" cols="10" rows="8" placeholder="Bemerkung">Bemerkung</textarea><br><br>
+
+                Lieblingsfarbe:
+                <input type="color"/><br>
+
+                <input type="submit" value="Freund hinzufügen"/><br><br>
+                  </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Geburtsdatum</th>
+                    <th>Geschlecht</th>
+                    <th>Hobbies</th>
+                    <th>Lieblingsfach</th>
+                    <th>Bemerkung</th>
+                    <th>Lieblingsfarbe</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    <script>
+    let form = document.querySelector("form")
+    form.onsubmit = event =>
+    {
+        // alert("Formular wird abgesendet")
+        event.preventDefault()
+        <script>
+    document.querySelector("form").onsubmit , evt => {
+            evt.preventDefault();
+
+            let firstName = document.querySelector("[name=firstName]");
+            let lastName = document.querySelector("[name=lastName]");
+            let birthday = document.querySelector("[name=birthday]");
+            let gender = document.querySelector("[name=gender]:checked");
+            let hobbies = Array.from(document.querySelectorAll("[name=hobbies]:checked")).map(option => option.value)
+            let avoriteSchoolSubjekt = document.querySelector("[name=avoriteSchoolSubjekt] option:checked");
+            let Bemerkungstext = document.querySelector("[name=bemerkungstext]");
+            let Lieblingsfarbe = document.querySelector("[name=lieblingsfarbe]");
+
+
+            let Tbody = document.querySelector("table tbody");
+            let row = document.createElement("tr");
+            let firstNameCell = document.createElement("td");
+            firstNameCell.innerText = firstName.value;
+            Tbody.appendChild(row);
+            row.appendChild(firstNameCell);
+
+            let lastNameCell = document.createElement("td");
+            lastNameCell.innerText = lastName.value;
+            Tbody.appendChild(row);
+            row.appendChild(lastNameCell);
+
+            let birthdayCell = document.createElement("td");
+            birthdayCell.innerText = birthday.value;
+            Tbody.appendChild(row);
+            row.appendChild(birthdayCell);
+
+            let genderCell = document.createElement("td");
+            genderCell.innerText = gender.value;
+            Tbody.appendChild(row);
+            row.appendChild(genderCell);
+
+           
+            let hobbiesCell = document.createElement("td");
+            HobbyCell.innerText = hobbys;
+            Tbody.appendChild(row);
+            row.appendChild(hobbiesCell);
+           
+   
+            let favoriteSchoolSubjekthCell = document.createElement("td");
+            favoriteSchoolSubjektCell.innerText = favoriteSchoolSubjekt.value;
+            Tbody.appendChild(row);
+            row.appendChild(favoriteSchoolSubjektCell);
+   
+            let b = document.createElement("td");
+            Bemerkungstext.innerText = Bemerkungstext.value;
+            Tbody.appendChild(row);
+            row.appendChild(Bemerkungstext);
+
+            let ieblingsfarb = document.createElement("td");
+            ieblingsfarb.innerText = ieblingsfarb.value;
+            Tbody.appendChild(row);
+            row.appendChild(ieblingsfarb);
+        
+
+        
+        }    }
+        
+    </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+
+<head>
+    <title>Auf Tastatureingabe reagiere</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <h1>Auf Tastatureingabe reagieren</h1>
+    <canvas id="scene" width="500" height="700" style="border: 1px dashed black"></canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        let keyUpIsPressed = false
+        let keyDownIsPressed = false
+        let keyLeftIsPressed = false
+        let keyRightIsPressed = false
+
+
+        let player = new Image()
+         
+        // Bildquelle difinieren
+        player.src = "http://iconoun.com/demo/images/scale_grumpy_cat.png"
+        let playerWidth = 900 / 15
+        let playerHeight = 704 / 15
+        
+
+        let xPos = scene.width/2-playerWidth/2
+        let yPos = 650
+        let draw = () =>
+        {
+            ctx.clearRect (0,0, scene.width, scene.height)
+            if (keyUpIsPressed)
+            {
+                yPos = yPos -0
+            }
+            if (keyDownIsPressed)
+            {
+                yPos = yPos +0
+            }
+            if (keyLeftIsPressed)
+            {
+                xPos = xPos - 3
+            }
+            if (keyRightIsPressed)
+            {
+                xPos = xPos + 3
+            }
+            //ctx.fillRect(xPos,yPos,70,100)
+            ctx.drawImage(player,xPos,yPos,playerWidth,playerHeight)
+        }
+
+
+        setInterval(draw, 25)
+
+        let onKeyDown = event => {
+            console.log("Key down", event.key)
+            if(event.key == "ArrowUp"){
+                keyUpIsPressed = true
+            } 
+            if(event.key == "ArrowDown"){
+                keyDownIsPressed = true
+            }
+            if(event.key == "ArrowLeft"){
+                keyLeftIsPressed = true
+            }
+            if(event.key == "ArrowRight"){
+                keyRightIsPressed = true
+            }
+        }
+        window.addEventListener("keydown", onKeyDown)
+  
+
+        let onKeyUp = event => {
+            console.log("Key Up", event.key)
+            if(event.key == "ArrowUp"){
+                keyUpIsPressed = false
+            }
+            if(event.key == "ArrowDown"){
+                keyDownIsPressed = false
+            }
+            if(event.key == "ArrowLeft"){
+                keyLeftIsPressed = false
+            }
+            if(event.key == "ArrowRight"){
+                keyRightIsPressed = false
+               
+            }
+        }
+        window.addEventListener("keyup", onKeyUp)
+
+     
+    
+        
+    </script>
+</body>
+
+</html>

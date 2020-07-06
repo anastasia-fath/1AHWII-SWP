@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+    <html lang="de-AT">
+    
+    <head>
+        <title>Balkendiagramm_1</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        <h1>Balkendiagramm_1</h1>
+        <canvas id="scene" width="1000" height="1000" style="border: 1px dashed black"></canvas>
+        <script>
+            let ctx = scene.getContext("2d") 
+            
+            let a = -130
+            let b = 20
+            let ab = 200
+
+            let a2 = 130
+            let b2 = 20
+            let ab2 = 650
+
+            while(a < -30)
+            {
+                ctx.strokeRect(ab, 300,  b, a)
+                ctx.strokeRect(ab2, 300, b2, -a2)
+
+                ab = ab + 25
+                a = a + 10
+
+                ab2 = ab2 - 25
+                a2 = a2 - 10
+
+            }
+
+        </script>
+    </body>
+    
+    </html>

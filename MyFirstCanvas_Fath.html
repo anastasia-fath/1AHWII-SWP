@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+
+<head>
+    <title>my first canvas</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <h1>My first canvas</h1>
+    <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */                 // für Befehlsvollständigung //
+        let ctx = scene.getContext("2d")
+
+        // Rechteck füööen, Start-X = 10, Start-Y = 10, Breite = 20, Höhe = 20 
+        ctx.fillRect(10, 10, 20, 20)
+
+        // Rechteck füllen, Start-X =50, Start-Y = 10, Breite = 20, Höhe = 50
+        ctx.fillRect(50, 10, 20, 50)
+
+        ctx.fillStyle = "red"
+
+        // Füllfarbe ändern (Standard: schwarz)
+        // Benannte Farben: https://www.w3schools.com/colors/colors_names.asp
+        ctx.fillStyle = "LawnGreen"
+        ctx.fillRect(90, 30, 40, 80)
+
+        ctx.strokeStyle = "Purple"
+        ctx.lineWidth = 10
+        ctx.strokeRect(130,10, 20, 100)
+
+        ctx.fillStyle = "black"
+        ctx.strokeStyle = "black"
+        ctx.lineWidth = 3
+        
+        ctx.fillStyle = "Aqua"
+        ctx.strokeStyle = "Aquamarine"
+        ctx.strokeRect(10, 150, 100, 100)
+        ctx.fillRect(50, 190, 20, 20)
+
+        ctx.fillStyle = "CornflowerBlue"
+        ctx.strokeStyle = "DarkCyan"
+        ctx.strokeRect(150, 150, 100, 100)
+        ctx.fillRect(220, 160, 20, 20)
+        ctx.fillRect(160, 220, 20, 20) 
+
+        ctx.fillStyle = "DarkRed"
+        ctx.strokeStyle = "DarkSalmon"
+        ctx.strokeRect(290, 150, 100, 100)
+        ctx.fillRect(330, 190, 20, 20)
+        ctx.fillRect(360, 160, 20, 20)
+        ctx.fillRect(300, 220, 20, 20)
+
+        ctx.fillStyle = "IndianRed"
+        ctx.strokeStyle = "HotPink"
+        ctx.strokeRect(10, 300, 100, 100)
+        ctx.fillRect(20, 310, 20, 20)
+        ctx.fillRect(20, 370, 20, 20)
+        ctx.fillRect(80, 370, 20, 20)
+        ctx.fillRect(80, 310, 20, 20)
+
+        ctx.fillStyle = "Lightcoral"
+        ctx.strokeStyle = "LightBlue"
+        ctx.strokeRect(150, 300, 100, 100)
+        ctx.fillRect(220, 310, 20, 20)
+        ctx.fillRect(220, 370, 20, 20)
+        ctx.fillRect(160, 310, 20, 20)
+        ctx.fillRect(160, 370, 20, 20)
+        ctx.fillRect(190, 340, 20, 20)
+
+        ctx.fillStyle = "Maroon"
+        ctx.strokeStyle = "PaleVioletRed"
+        ctx.strokeRect(290, 300, 100, 100)
+        ctx.fillRect(330, 310, 20, 20)
+        ctx.fillRect(330, 370, 20, 20)
+        ctx.fillRect(360, 310, 20, 20)
+        ctx.fillRect(360, 370, 20, 20)
+        ctx.fillRect(300, 310, 20, 20)
+        ctx.fillRect(300, 370, 20, 20)
+
+    </script>
+</body>
+
+</html>

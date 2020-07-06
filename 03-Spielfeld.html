@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spielfeld</title>
+    </head>
+    <body>
+        <h1>Spielfeld</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dotted black"></canvas>
+        <script>
+/** @type {CanvasRenderingContext2D} */
+let ctx = scene.getContext("2d");
+
+let radius = 15 // Versuche den Wert zu ändern und schau was passiert
+let offset = 5 // Versuche den Wert zu ändern (auch ins negative) und schau was passiert
+ctx.fillStyle = "cornflowerblue"
+
+// Lt. Angabe wollen wir 5 Zeilen zeichnen, deshalb zählen wir von 0 bis 4.
+// row startet mit dem Wert 0 und wird solange der Wert kleiner als 5 ist um eins erhöht.
+// Der Grund, wieso wir von 0 zu zählen beginnen, wird klarer, sobald wir "Arrays" kennen.
+for (let row = 0; row < 5; row++)
+{
+    // Lt. Angabe wollen wir 12 Spalten zeichnen, deshalb zählen wir von 0 bis 11
+    for (let col = 0; col < 12; col++)
+    {
+        // Berechnung der x-Koordinate des Mittelpunkts
+        // Hier kann gerne ein bisschen probiert werden, um auf die richtige Berechnung zu kommen, mit Aufzeichnen funktionierts besser.
+        // Die x-Koordinate ist abhängig von der aktuellen Spalte (col), vom Radius (radius) und vom Abstand zwischen den Kreisen (offset).
+        // Diese drei Variablen werden in dieser Berechnung verarbeitet.
+        // Versuche nochmal, von alleine auf die Formel zu kommen.
+        let centerX = col * (2 * radius + offset) + radius + offset
+        let centerY = row * (2 * radius + offset) + radius + offset
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+    <html lang="de-AT">
+    
+    <head>
+        <title>Spielfeld_1</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        <h1>Spielfeld_1</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+        <script>
+            /** @type {CanvasRenderingContext2D} */
+            let ctx = scene.getContext("2d") 
+
+           let x = 15
+           let y = 20
+           let r = 15
+
+           while(x < 360) {
+               ctx.fillStyle ="CornflowerBlue"
+               ctx.beginPath()
+               ctx.arc(x, y, r, 0, 2* Math.PI)
+               ctx.fill()
+               x = x + r * 2
+           }
+
+           while(y < 120) {
+               x = 15
+               ctx.fillStyle ="CornflowerBlue"
+               ctx.beginPath()
+               ctx.arc(x, y, r, 0, 2* Math.PI)
+               ctx.fill()
+               y = y + r*2
+
+                while(x < 360) {
+                ctx.beginPath()
+                 ctx.arc(x, y, r, 0, 2 * Math.PI)
+                 ctx.fill()
+                 x = x + r * 2
+           }
+           }
+
+        
+        </script>
+        <p> Diese Übung wurde mit Marius Petku GEMEINSAM programmiert, da es mir einfacher fällt es gemeinsam zu machen.            
+            </p>
+    </body>
+    
+    </html>

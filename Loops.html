@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <title>Loops</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+    <h1>Loops</h1>
+
+    <canvas id="scene" width="1000" height="1000" style="border: 1px dashed black"></canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        // Variable mit Namen "Offset" anlegen (=deklarieren) und
+        // die Zahl 5 darin merken.
+        let offset = 10
+        var Amir = 60
+
+
+
+        // Anweisungen in der Schleife werden so lange wiederholt,
+        // so lange die Aussage "Wahr" ist.
+        // while (offset < 0   ) {
+        // WICHTIG: Variable "offset" muss verändert werden
+        // damit die Bedingung in der Schleife irgendwann nicht
+        // mehr "wahr" ist und die Schleife beendet werden kann.
+        // Ansonsten erhaelt man eine sich endlos wiederholende Schleife.
+        // offset = offset + 10
+        // Amir = Amir + 15
+        //  ctx.strokeRect(offset, offset, Amir, Amir) 
+        //  }
+
+
+        // TODO 1. konzentrische Quadrate
+        //      2. konzentrische Kreise
+        //      3. Strichlierten Kreis
+
+
+        // 1. konzentrische Quadrate
+        for (W = 50; W < 500; W = W + 50) {
+            ctx.strokeRect(500 - W / 2, 500 - W / 2, W, W)
+        }
+
+        // 2. konzentrische Kreise
+        for (Rad = 20; Rad < 80; Rad = Rad + 20) {
+            ctx.beginPath();
+            ctx.arc(100, 100, Rad, 0, Math.PI * 2, false)
+            ctx.stroke();
+        }
+
+        // 3. Schtrichlierte Kreise
+        for (Rad = 20; Rad < 120; Rad = Rad + 20) {
+            ctx.beginPath();
+            ctx.arc(200, 200, Rad, 0, Math.PI * 2)
+            ctx.setLineDash([5, 5])
+            ctx.stroke()
+            ctx.setLineDash([0, 0])
+        }
+
+        // Viele Schleifen funktionieren folgendermassen:
+        // * Vor der Schleife wird eine Variable 'a' auf eien bestimmten
+        // Anfangswert gesetzt.
+        // * Vor jedem Durchlauf der Schleife wird mithilfe der Variable 'a'
+        // gepruefet, ob die Anweisungen in der Schleife ausgefuert werden
+        // sollen.
+        // * Nach jedem Schleifendurchlauf wird die Variable 'a' veraendert
+        // sodass obige Bedinung eventuell nicht mehr erfuellt wird
+        // und die Schleife dadurch beendet wird.
+        // Fuer solche Schleifen gibt es eine Alternative, etwas kürzere
+        // Schreibweise:
+
+        ctx.strokeStyle = "steelblue"
+        for (a = 5; a < 100; a += 10) {
+            ctx.strokeRect(a + 150, a, 50, 50)
+        }
+
+// Fuer 'a = a + 10' gibt es noch eine kuerzere Schreibweise 'a += 10'
+// (gilt auch fuer die Operatoten '-' '*' und '/') 
+// Fuer das Erhoehen einer Variable um 1 gibt es noch eine kuerzere
+// Schreibweise: 'a++' (gilt auch für '-')
+
+// Übungen:
+// 1. Ich hab das schon gehabt
+// 2. Balkendiagramm zeichnen
+// 3. Fukntion zeichnen (z.B. x^2)
+
+    </script>
+
+</body>
+
+
+
+
+
+
+
+</html>

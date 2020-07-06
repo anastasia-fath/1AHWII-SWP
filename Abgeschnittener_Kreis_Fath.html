@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="de-AT">
+    
+    <head>
+        <title>Abgeschnittener Kreis</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        <h1>Abgeschnittener Kreis</h1>
+        <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+        <script>
+            /** @type {CanvasRenderingContext2D} */
+            let ctx = scene.getContext("2d") 
+            
+            let drawCircle = (radius) => {
+        if (radius <= 50){
+            ctx.strokeStyle = "green"
+                }
+        else {
+                ctx.strokeStyle = "red"
+                }
+        ctx.beginPath()
+        ctx.arc(50, 50, radius, 0, 2* Math.PI)
+        ctx.stroke()
+            }
+            drawCircle(35)
+            drawCircle(45)
+            drawCircle(55)
+            drawCircle(65)
+        </script>
+    </body>
+    
+    </html>
